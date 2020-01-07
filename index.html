@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IWOP</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+  <style>
+      ::-webkit-scrollbar {
+        background: transparent;
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,.05);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #36AFFF;
+    }
+   
+      *{
+          margin: 0;
+      }
+      #head{
+          background-color: #36AFFF;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100vh;
+      }
+      #IWOP{
+          color: white;
+          display: flex;
+          font-size: 10em;
+      }
+      .title{
+          color: white;
+          font-size: 1.5em;
+      }
+      #keydown{
+          display: flex;
+          flex-direction: column;
+          color: white;
+          opacity: 0.2;
+          transition: 0.5s;
+          position:absolute;
+          bottom: 2%;
+      }
+      #topvar{
+        background-color: #36AFFF;
+        display: flex;
+        justify-content: space-between;
+      }
+      #histoy{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 100px auto;
+      }
+      .contents{
+          text-align: center;
+          color: #36AFFF;
+          font-size: 2.4em;
+          line-height: 2em;
+          margin-top: 100px;
+      }
+      #curriculum{
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content:center;
+          width: 80%;
+          margin: 100px 0;
+      }
+      .curriculums{
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+         padding: 40px;
+         margin: 20px;
+         min-width: 400px;
+      }
+      #aword{
+        background-color: black; 
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+       flex-direction: column;
+      }
+
+      #black{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+      }
+      #question{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.5em;
+        line-height: 2em;
+      }
+      #footer{
+        background-color: #36AFFF;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        line-height: 1.8em;
+        font-size: 0.9em;
+      }
+      a{
+        color: white;
+      }
+      #QnA{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 80%;
+        }
+        .Q{
+            color: #36AFFF;
+            font-size: 1.8em;
+            line-height: 2em;
+        }
+        .A{
+            font-size: 1.5em;
+            line-height: 2em;
+        }
+        .qna{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin-bottom: 30px;
+        }
+        #button{
+            margin: 50px;
+            border-radius: 50px; 
+            font-size: 1em; 
+            padding: 20px 100px;
+            background: none;
+            border: 1px solid #AAAAAA;
+            color: #AAAAAA;
+        }
+        .list{
+            overflow:scroll;
+            list-style: none; 
+            height: 300px; 
+            font-size: 1em;
+            min-width: 300px;
+            padding: 4px;
+        }
+        .list li{
+            padding: 10px;
+            
+        }
+        .listbox{
+            flex: 1;
+            margin: 50px;
+        }
+        .year{
+            color: #36AFFF;
+            width: 100%;
+            font-size: 1.8em;
+            line-height: 2em;
+        }
+        .icon{
+            color: #36AFFF;
+            display: block;
+            font-size: 3em;
+            text-align: center;
+        }
+        #Work{
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2em;
+            margin: 100px 0px;
+            padding: 40px;
+
+        }
+        #works{
+            display: flex;
+            width: 900%;
+            height: 450px;
+        }
+        .project{
+            margin: 0px 20px;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .imgbox{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: -1;
+        }
+        #toplist{
+            list-style: none; 
+            display: flex;
+            color: white;
+            font-size: 1.2em;
+        }
+        #toplist li{
+            margin: 0px 10px;
+        }
+  </style>
+</head>
+<body>
+    <head>
+        <div id="head">
+            <div id="IWOP">
+                <div>I</div>
+                <div>W</div>
+                <div>O</div>
+                <div>P</div>
+            </div>
+            <div class="title">Internet World Operation People</div>
+            <div class="title" style="margin-top: 60px; font-size: 1.8em;">소프트웨어 <b>유일 웹 동아리</b></div>
+            <div id="keydown">    
+                <i class="material-icons" style=" font-size: 4em; line-height: 20px;">keyboard_arrow_down</i>
+                <i class="material-icons" style=" font-size: 4em; line-height: 20px;">keyboard_arrow_down</i>
+                <i class="material-icons" style=" font-size: 4em; line-height: 20px;">keyboard_arrow_down</i>    
+            </div>
+        </div>
+        <div id="topvar">
+            <div id="IWOP" style="font-size: 2em; margin-left: 2%;">
+                <div>I</div>
+                <div>W</div>
+                <div>O</div>
+                <div>P</div>
+            </div>
+            <div style="margin-right: 5%;">
+                <ul id="toplist">
+                    <li><a href="#histoy">소개</a></li>
+                    <li><a href="#curicul">커리큘럼</a> </li>
+                    <li><a href="#aword">수상실적</a></li>
+                    <li> <a href="#Work">작품</a></li>
+                    <li><a href="#Q">QnA</a></li>
+                    <li><a href="#ask">문의</a></li>
+                </ul>
+            </div>
+        </div>
+    </head>
+    <div>
+        <div id="histoy">
+        <h2 class="contents">소개</h2>
+        <p style="font-size: 1.5em; word-break: keep-all; line-height: 2em; width: 100%; text-align: center;">소프트웨어과 전문동아리 중 유일하게 웹동아리인 IWOP은 19년의 역사를 자랑하는 동아리 입니다. 우수한 수상실적을 보유하고있으며, 웹 클라이언트,          서버 웹 게임 개발과 웹 디자인을 배울수 있습니다!</div>
+        </div> 
+    </div>
+    <h2 class="contents" id="curicul">커리큘럼</h2>
+    <div style="display: flex; justify-content: center;">
+        <div id="curriculum">
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">code</i>
+                <h2 class="year">1.FrontEnd Basic</h2>
+                <p style="line-height: 1.8em; word-break: keep-all;
+                font-size: 1.2em;">처음 IWOP에 들어오면 HTML5와 CSS3로 정적 페이지를 만들어 봅니다.</p>
+            </div>
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">description</i>
+                <h2 class="year">2.Javascript</h2>
+                <p style="line-height: 1.8em;
+                font-size: 1.2em;">자바스크립트로 동적인 홈페이지를 제작해봅니다.</p>
+            </div>
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">http</i>
+                <h2 class="year">3.Node.js</h2>
+                <p style="line-height: 1.8em;
+                font-size: 1.2em;">Node.js와 express프레임워크로 웹서버를 만들어 봅니다.</p>
+            </div>
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">storage</i>
+                <h2 class="year">4.Database, server</h2>
+                <p style="line-height: 1.8em;
+                font-size: 1.2em;">MongoDB,Socket.io,Passport로 다양한 서버를 제작해봅니다.</p>
+            </div>
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">view_compact</i>
+                <h2 class="year">5. FrontEnd Advanced</h2>
+                <p style="line-height: 1.8em;
+                font-size: 1.2em;">Vue 로 SPA를 만들어 실제로 배포해봅니다.</p>
+            </div>
+            <div class="curriculums">
+                <i class="title--normal material-icons iwop__curriculum__item__icon icon">videogame_asset</i>
+                <h2 class="year">6. Web Game</h2>
+                <p style="line-height: 1.8em;
+                font-size: 1.2em;">phaser.js로 웹게임을 개발하고 기획해봅니다.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="aword">
+        <h4 class="contents">수상실적</h4>
+       <div id="black">
+        <div class="listbox">
+            <h2 class="year">2016(21)</h2>
+            <ul class="list">
+                <li><h4>모바일 콘텐츠 경진대회</h4></li>
+<li>List_EN - 금상 (유성진)</li>
+<li>Hamvoca - 은상 (김효지)</li>
+<li>VOXEL Heroes - 금상 (김효지)</li>
+<li>PLICE - 은상 (박종운 이민승, 정명진 조기훈)</li>
+<li>탈출하라! 불여우 - 은상 (박효정)</li>
+<li><h4>디지털 콘텐츠 경진대회 </h4></li>
+<li>srNow &amp; srHome - 금상 (박종운)</li>
+<li>깨어나다 - 금상 (박종운)</li>
+<li>Pacific.io - 금상 (박효정)</li>
+<li>PUSH MIND - 은상 (이민승,조기훈)</li>
+<li>오버워치 브라우저 - 동상 (김민정)</li>
+<li>Reverse Black&amp;White - 동상 (김태균)</li>
+<li>주객전도 - 동상 (김효지)</li>
+<li><h4>기타</h4></li>
+<li>김소영 - 선린해커톤 게임 부문 동상 (RE:WIND)</li>
+<li>김효지 - 그래픽공모전 포스터 부문 동상</li>
+<li>박종운 - 그래픽공모전 영상 부문 금상 (TANGLED)</li>
+<li>박종운 - SK Smarteen App Challenge 동상 (혼밥)</li>
+<li>박종운, 이민 - 인천해커톤 전북도지사상 (MUTE ON)</li>
+<li>박효정 - 그래픽공모전 일러스트 부문 금상</li>
+<li>박효정 - 과학 UCC 경진대회 은상</li>
+<li>박효정 - SK Smarteen App Challenge IOT 부분 최우수상 (오늘의 분위기)</li>
+<li>박효정 - 영상 제작 공모전 영화 부문 동상 (향기)</li>
+</ul>
+        </div>
+        <div class="listbox">
+            <h2 class="year">2017(16)</h2>
+            <ul class="list">
+                <li><h4>모바일 콘텐츠 경진대회</h4></li>
+<li>Windlocker - 대상 (유성진)</li>
+<li>Babylock - 금상 (김은희)</li>
+<li>SNS - 은상 (송정우)</li>
+<li>SNS - 은상 (신재헌)</li>
+<li><h4>디지털 콘텐츠 경진대회 </h4></li>
+<li>HarryPotter:Hocrux - 대상 (김은희)</li>
+<li>QuizTree - 은상 (송정우)</li>
+<li>QuizTree - 은상 (신재헌)</li>
+<li><h4>기타</h4></li>
+<li>박정현 - 그래픽 디자인 공모전 동상(Mario Studio)</li>
+<li>박정현 - 과학 UCC 공모전 동상 (About Translator)</li>
+<li>김은희 - 과학 UCC 공모전 동상 (미세먼지의 습격)</li>
+<li>김은희 - 그래픽 디자인 공모전 금상 (동심)</li>
+<li>김효지 - 그래픽 디자인 공모전 금상 (동심)</li>
+<li>유성진 - IT's 챌린지 대회 최우수상(PRIMUS)</li>
+<li>최지원 - 과학 UCC 공모전 은상(Science Land)</li>
+<li>최지원 - 영상 제작 공모전 대상 (헌혈로 채우는 사랑)</li>
+<li>최희영 - 영상 제작 공모전 대상 (헌혈로 채우는 사랑)</li>
+            </ul>  
+        </div>
+        <div class="listbox">
+            <h2 class="year">2018(18)</h2>
+            <ul  class="list">
+                <li><h4>모바일 콘텐츠 경진대회</h4></li>
+<li>SafetyPIN - 금상 (방진혁)</li>
+<li>SafetyPIN - 금상 (김수빈)</li>
+<li>SafetyPIN - 금상 (송정우)</li>
+<li>SafetyPIN - 금상 (신재헌)</li>
+<li>스크린 번역기 - 금상 (김수빈)</li>
+<li><h4>디지털 콘텐츠 경진대회 </h4></li>
+<li>꼬리가 길면 잡힌다 - 대상 (방진혁)</li>
+<li>Cont_our - 금상 (박종훈)</li>
+<li>아버지 돌굴러가유 - 동상 (박종훈)</li>
+<li><h4>기타</h4></li>
+<li>방진혁 - 프로그래밍 경시대회 장려상</li>
+<li>방진혁 - 프로그래밍 경시대회 동상</li>
+<li>방진혁 - 선린톤 동상</li>
+<li>박종훈 - 선린톤 동상</li>
+<li>박종훈 - 앱잼 미래산업 우수상</li>
+<li>박종훈 - 프로그래밍 경시대회 장려상</li>
+<li>김나영 - 그래픽 디자인 공모전 금상 (모션 그래픽 부문)</li>
+<li>박정우 - 독서 PT 대회 장려상</li>
+<li>박정우 - 프로그래밍 경진 대회 금상</li>
+<li>김수빈 - 서울 메이커 동상</li>
+<li>김수빈 - 선린톤 동상</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div id="Work">
+    <h2 class="contents">작품</h2>
+    <div id="works">
+        <div class="project">
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+            <h2>오목</h2>
+        </div>
+        <div class="project">
+            <h2>cont_our</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>햄찌볼</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>꼬리가 길면 잡힌다</h2>
+           <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>스크린 번역기</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>오목</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>cont_our</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+        <div class="project">
+            <h2>햄찌볼</h2>
+            <div class="imgbox">
+                <img src="sunrin.png" alt="선린">
+            </div>
+        </div>
+    </div>
+    </div>
+    <h2 class="contents" id="Q">QnA</h2>
+    <div id="QnA">
+        <div class="qna">
+            <div class="Q">Q 아이왑에 지원하려면 실력이 얼마나 좋아야 하나요?</div>
+            <div class="A">A 완전 처음 이여도 상관없습니다! 웹을 배우고자 하는 열정만 있다면 충분합니다!</div>
+        </div>
+        <div class="qna">
+            <div class="Q">Q 포트폴리오를 반드시 내야 하나요?</div>
+            <div class="A">A 내든 안내든 상관없으나 내면 좋습니다.</div>
+        </div>
+        <div class="qna">
+            <div class="Q">Q 지원 자격이 어떻게 되나요?</div>
+            <div class="A">A 선린 1학년 소프트웨어과,멀티미디어과가 지원 가능합니다!</div>
+        </div>
+        <div class="qna">
+            <div class="Q">Q 5.기(점오기)뽑나요?</div>
+            <div class="A">A 아쉽게도 지원을 받지 않습니다.</div>
+        </div>
+    </div>
+    <h2 class="contents" id="ask">문의</h2>
+    <div id="question" style="padding: 40px;">
+        <div>부장 : 박종훈 (010-7207-8667)</div>
+        <div>쀼장 : 방진혁 (010-2784-1970)</div>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 20px;">
+            <a href="https://www.facebook.com/sunrinIwop/"><img src="facbook.png" alt="iwop facebook-img" style="width: 140px;height: 80px;"></a>
+            <a href="https://github.com/IWOP/iwop.github.io"><img src="github.png" alt="iwop github-img" style="width: 80px;height: 80px;"></a>
+        </div>
+        <button id="button">지원마감</button>
+    </div>
+    <footer>
+        <div id="footer">
+                <div style="margin: 0 5%;">선린 인터넷 고등학교<br>
+                    소프트웨어과 전공 동아리(IWOP)
+                </div>
+                <div style="margin-right: 5%; text-align: right;">
+                    <a href="https://github.com/IWOP/iwop.github.io">GITHUB</a> ,
+                    <a href="https://www.facebook.com/sunrinIwop/">FACBOOK</a> 
+                    <br>
+                    © 2019. PJH. All rights reserved.
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

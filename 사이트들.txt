@@ -1,0 +1,8 @@
+display flex는 부모에게 지정하면 자식에게 적용
+
+justify-content :center;
+animate.css
+aos-
+
+order ??? why??
+

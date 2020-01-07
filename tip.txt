@@ -1,0 +1,3 @@
+SEO 검색엔진 최적화   (keyword 정의)
+
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
